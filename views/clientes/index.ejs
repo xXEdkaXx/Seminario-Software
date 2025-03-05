@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+
+<body>
+    <h1>Lista de Clientes</h1>
+    <a href="/Crear">Crear Clientes</a>
+    <table>
+        <thead>
+            <tr>
+                <td>Código</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Edad</td>
+                <td>Ciudad</td>
+                <td>Telefono</td>
+                <td>Editar</td>
+                <td>Ver</td>
+                <td>Eliminar</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach((dato=>{ %>
+                <tr>
+                    <td><%= dato.codigo %></td>
+                    <td><%= dato.nombre %></td>
+                    <td><%= dato.apellido %></td>
+                    <td><%= dato.edad %></td>
+                    <td><%= dato.ciudad %></td>
+                    <td><%= dato.telefono %></td>
+                    <td><a href="/editar">Editar</a></td>
+                    <td><a href="/ver">Ver</a></td>
+                    <td><a href="/eliminar">Eliminar</a></td>
+                </tr>
+                <% }))%>
+        </tbody>
+    </table>
+</body>
+
+</html>

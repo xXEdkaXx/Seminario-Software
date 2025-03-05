@@ -14,4 +14,4 @@ INSERT INTO clientes (nombre, apellido, edad, telefono, ciudad) VALUES
 ('Juan', 'Perez', 22, '90909090', 'La Ceiba'),
 ('Carlos', 'Medina', 30, '80808080', 'San Pedro Sula'),
 ('Diana', 'Paz', 23, '70707070', 'Santa Barbara'),
-('Fernanda', 'Casco', 25, '60606060', 'Choluteca');
+('Fernanda', 'Casco', 25, '60606060','Choluteca');
