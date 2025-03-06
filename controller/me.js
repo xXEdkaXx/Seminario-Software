@@ -84,3 +84,16 @@ exports.editEmpleados = (req, res) =>{
         }
     });
 }
+
+exports.deleteEmpleados = (req, res) => {
+    const codigoE = (req.body.codigoE);
+
+    conexion.query('DELETE FROM empleados WHERE codigoE = ?', [codigoE], (error) => {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            res.redirect('/Empleados2');
+        }
+    });
+}

@@ -4,34 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Empleado</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Editar Empleado</h1>
-    <form action="/editEmpleados" method="POST">
+    <h1>Eliminar Cliente</h1>
+    <form action="/deleteEmpleados" method="POST">
         <label for="codigo">Código</label>
         <input type="text" name="codigoE" id="codigoE" value="<%= empleado.codigoE %>" readonly>
         <br><br>
         <label for="Nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" value="<%= empleado.nombre %>" >
+        <input type="text" name="nombre" id="nombre" value="<%= empleado.nombre %>" readonly>
         <br><br>
         <label for="Apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido" value="<%= empleado.apellido %>" >
+        <input type="text" name="apellido" id="apellido" value="<%= empleado.apellido %>" readonly>
         <br><br>
         <label for="Edad">Edad</label>
-        <input type="text" name="edad" id="edad" value="<%= empleado.edad %>" >
+        <input type="text" name="edad" id="edad" value="<%= empleado.edad %>" readonly>
         <br><br>
         <label for="Fecha">Fecha</label>
-        <input type="text" name="fechaC" id="fechaC" value="<%= empleado.fechaC %>" >
+        <input type="text" name="fechaC" id="fechaC" value="<%= empleado.fechaC %>" readonly>
         <br><br>
         <label for="Sueldo">Sueldo</label>
-        <input type="number" name="sueldo" id="sueldo" value="<%= empleado.sueldo %>" >
+        <input type="number" name="sueldo" id="sueldo" value="<%= empleado.sueldo %>" readonly>
         <br><br>
         <label for="Teléfono">Teléfono</label>
-        <input type="text" name="telefono" id="telefono" value="<%= empleado.telefono %>" >
+        <input type="text" name="telefono" id="telefono" value="<%= empleado.telefono %>" readonly>
         <br><br>
-        <button type="submit">Actualizar</button>
+        <button type="submit">Eliminar</button>
         <a href="/Empleados2">Cancelar</a>
     </form>
 </body>

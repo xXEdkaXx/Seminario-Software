@@ -98,5 +98,18 @@ router.get('/editarE/:id', (req, res) => {
 
 router.post('/editEmpleados', metodos.editEmpleados);
 
+router.get('/eliminarE/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM empleados WHERE codigoE = ?', [codigo], (error, resultado) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        res.render('empleado/eliminar', { empleado: resultado[0] });
+    });
+});
+
+router.post('/deleteEmpleados', metodos.deleteEmpleados);
+
 
 module.exports = router; 
