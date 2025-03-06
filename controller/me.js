@@ -65,3 +65,22 @@ exports.saveEmpleados = (req, res) => {
         }
     });
 }
+
+exports.editEmpleados = (req, res) =>{
+    const codigoE = (req.body.codigoE);
+    const nombre = (req.body.nombre);
+    const apellido = (req.body.apellido);
+    const edad = (req.body.edad);
+    const fechaC = (req.body.fechaC);
+    const sueldo = (req.body.sueldo);
+    const telefono = (req.body.telefono);
+
+    conexion.query('UPDATE empleados SET ? WHERE codigoE = ?', [{ nombre:nombre, apellido:apellido, edad:edad, fechaC:fechaC, sueldo:sueldo, telefono:telefono}, codigoE], (error) => {
+        if (error){
+            console.log(error);
+            return;
+        } else {
+            res.redirect('/Empleados2')
+        }
+    });
+}

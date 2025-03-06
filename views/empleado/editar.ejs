@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Empleado</title>
+</head>
+
+<body>
+    <h1>Editar Empleado</h1>
+    <form action="/editEmpleados" method="POST">
+        <label for="codigo">Código</label>
+        <input type="text" name="codigoE" id="codigoE" value="<%= empleado.codigoE %>" readonly>
+        <br><br>
+        <label for="Nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="<%= empleado.nombre %>" >
+        <br><br>
+        <label for="Apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" value="<%= empleado.apellido %>" >
+        <br><br>
+        <label for="Edad">Edad</label>
+        <input type="text" name="edad" id="edad" value="<%= empleado.edad %>" >
+        <br><br>
+        <label for="Fecha">Fecha</label>
+        <input type="text" name="fechaC" id="fechaC" value="<%= empleado.fechaC %>" >
+        <br><br>
+        <label for="Sueldo">Sueldo</label>
+        <input type="number" name="sueldo" id="sueldo" value="<%= empleado.sueldo %>" >
+        <br><br>
+        <label for="Teléfono">Teléfono</label>
+        <input type="text" name="telefono" id="telefono" value="<%= empleado.telefono %>" >
+        <br><br>
+
+        <button type="submit">Actualizar</button>
+        <a href="/Empleados2">Cancelar</a>
+    </form>
+</body>
+
+</html>

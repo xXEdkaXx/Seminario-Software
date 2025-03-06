@@ -2,7 +2,7 @@ CREATE DATABASE seminario;
 USE seminario;
 
 CREATE TABLE clientes (
-    codigo INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    codigo INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,R
     nombre VARCHAR(30) DEFAULT '0',
     apellido VARCHAR(30) DEFAULT '0',
     edad INT(2) UNSIGNED DEFAULT '0',
@@ -16,7 +16,7 @@ CREATE TABLE empleados (
     apellido VARCHAR(50) NOT NULL,
     edad INT DEFAULT 0,
     fechaC VARCHAR(50) NOT NULL,
-    sueldo sueldo int(10) DEFAULT 0,
+    sueldo int(10) DEFAULT 0,
     telefono VARCHAR(20) UNIQUE
 );
 
