@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const conexion = require('./database/db');
+const metodos = require('./controller/me');
+const e = require('express');
 
+//ÁREA CLIENTES
 router.get('/Clientes', (req, res) => {
     conexion.query('SELECT * FROM clientes', (error, results) => {
         if (error) {
@@ -32,9 +35,6 @@ router.get('/crear', (req, res) => {
     res.render('cliente/crear');
 });
 
-const metodos = require('./controller/me');
-
-
 router.post('/save', metodos.save);
 
 router.get('/editar/:id', (req, res) => {
@@ -63,12 +63,20 @@ router.get('/eliminar/:id', (req, res) => {
 
 router.post('/delete', metodos.delete);
 
+//ÁREA EMPLEADOS
 router.get('/Empleados', (req, res) => {
     res.send('Este es la ruta de Empleados')
 });
 
 router.get('/Empleados2', (req, res) => {
-    res.render('empleado/index')
+    conexion.query('SELECT * FROM empleados', (error, results)=>{
+        if (error) {
+            console.log(error);
+            return;
+        } else {
+            res.render('empleado/index',{empleado:results});
+        }
+    });
 });
 
 module.exports = router; 

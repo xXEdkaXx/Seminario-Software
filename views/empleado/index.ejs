@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>Lista de Empleados</title>
 </head>
+
 <body>
-    <h1>Lista de empleados</h1>
-    
-</body>
+    <h1>Gestión de Empleados</h1>
+    <a href="/">Crear Empleados</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Fecha</th>
+                <th>Sueldo</th>
+                <th>Telefono</th>
+                <th>Editar</th>
+                <th>Ver</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% empleado.forEach((dato)=>{ %>
+                <tr>
+                    <td>
+                        <%= dato.codigo %>
+                    </td>
+                    <td>
+                        <%= dato.nombre %>
+                    </td>
+                    <td>
+                        <%= dato.apellido %>
+                    </td>
+                    <td>
+                        <%= dato.edad %>
+                    </td>
+                    <td>
+                        <%= dato.fechaC %>
+                    </td>
+                    <td>
+                        <%= dato.sueldo %>
+                    </td>
+                    <td>
+                        <%= dato.telefono %>
+                    </td>
+                    <td><a href="">Editar</a></td>
+                    <td><a href="">Ver</a></td>
+                    <td><a href="">Eliminar</a></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
 </html>
