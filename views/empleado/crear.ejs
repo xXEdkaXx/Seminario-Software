@@ -4,14 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cliente</title>
+    <title>Crear Empleados</title>
 </head>
 
 <body>
-    <form action="/save" method="post">
-
-        <label for="Codigo">Codigo</label>
-        <input type="text" name="codigo" id="codigo">
+    <form action="/saveEmpleados" method="post">
 
         <label for="Nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre">
@@ -21,14 +18,17 @@
 
         <label for="Edad">Edad</label>
         <input type="text" name="edad" id="edad">
+        
+        <label for="Fecha">Fecha</label>
+        <input type="text" name="fechaC" id="fechaC">
+
+        <label for="Sueldo">Sueldo</label>
+        <input type="number" name="sueldo" id="sueldo">
 
         <label for="Teléfono">Teléfono</label>
         <input type="text" name="telefono" id="telefono">
 
-        <label for="Ciudad">Ciudad</label>
-        <input type="text" name="ciudad" id="ciudad">
-
-        <button type="submit">Crear Clientes</button>
+        <button type="submit">Crear Empleado</button>
     </form>
 </body>
 

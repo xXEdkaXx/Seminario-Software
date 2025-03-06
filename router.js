@@ -25,7 +25,7 @@ router.get('/Cliente2', (req, res) => {
         if (error) {
             console.log(error);
             return;
-        }else {
+        } else {
             res.render('cliente/index', { clientes: results });
         }
     });
@@ -69,14 +69,19 @@ router.get('/Empleados', (req, res) => {
 });
 
 router.get('/Empleados2', (req, res) => {
-    conexion.query('SELECT * FROM empleados', (error, results)=>{
+    conexion.query('SELECT * FROM empleados', (error, results) => {
         if (error) {
             console.log(error);
             return;
         } else {
-            res.render('empleado/index',{empleado:results});
+            res.render('empleado/index', { empleado: results });
         }
     });
 });
 
+router.post('/saveEmpleados', metodos.saveEmpleados);
+
+router.get('/creare', (req, res) => {
+    res.render('empleado/crear');
+});
 module.exports = router; 

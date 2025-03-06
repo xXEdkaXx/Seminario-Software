@@ -15,8 +15,8 @@ CREATE TABLE empleados (
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
     edad INT DEFAULT 0,
-    fechaC DATE NOT NULL,
-    sueldo DECIMAL(10,2) DEFAULT 0,
+    fechaC VARCHAR(50) NOT NULL,
+    sueldo sueldo int(10) DEFAULT 0,
     telefono VARCHAR(20) UNIQUE
 );
 
