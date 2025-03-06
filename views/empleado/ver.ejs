@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ver Empleado</title>
 </head>
 
 <body>
-    <h1>Eliminar Empleado</h1>
-    <form action="/deleteEmpleados" method="POST">
+    <h1>Ver Empleado</h1>
+    <form>
         <label for="codigo">Código</label>
         <input type="text" name="codigoE" id="codigoE" value="<%= empleado.codigoE %>" readonly>
         <br><br>
@@ -31,8 +31,7 @@
         <label for="Teléfono">Teléfono</label>
         <input type="text" name="telefono" id="telefono" value="<%= empleado.telefono %>" readonly>
         <br><br>
-        <button type="submit">Eliminar</button>
-        <a href="/Empleados2">Cancelar</a>
+        <button type="submit"><a href="/Empleados2">Volver</a></button>
     </form>
 </body>
 

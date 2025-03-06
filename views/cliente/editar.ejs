@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Cliente</title>
 </head>
 
 <body>
@@ -12,21 +12,22 @@
     <form action="/edit" method="POST">
         <label for="codigo">Código</label>
         <input type="text" name="codigo" id="codigo" value="<%= cliente.codigo %>" readonly>
+        <br><br>
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" value="<%= cliente.nombre %>">
-
+        <br><br>
         <label for="apellido">Apellido</label>
         <input type="text" name="apellido" id="apellido" value="<%= cliente.apellido %>">
-
+        <br><br>
         <label for="edad">Edad</label>
         <input type="text" name="edad" id="edad" value="<%= cliente.edad %>">
-
+        <br><br>
         <label for="telefono">Teléfono</label>
         <input type="text" name="telefono" id="telefono" value="<%= cliente.telefono %>">
-
+        <br><br>
         <label for="ciudad">Ciudad</label>
         <input type="text" name="ciudad" id="ciudad" value="<%= cliente.ciudad %>">
-
+        <br><br>
         <button type="submit">Actualizar</button>
         <a href="/Cliente2">Cancelar</a>
     </form>

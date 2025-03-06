@@ -63,6 +63,17 @@ router.get('/eliminar/:id', (req, res) => {
 
 router.post('/delete', metodos.delete);
 
+router.get('/ver/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM clientes WHERE codigo = ?', [codigo], (error, resultado) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        res.render('cliente/ver', { cliente: resultado[0] });
+    });
+});
+
 //ÁREA EMPLEADOS
 router.get('/Empleados', (req, res) => {
     res.send('Este es la ruta de Empleados')
@@ -110,6 +121,17 @@ router.get('/eliminarE/:id', (req, res) => {
 });
 
 router.post('/deleteEmpleados', metodos.deleteEmpleados);
+
+router.get('/verE/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM empleados WHERE codigoE = ?', [codigo], (error, resultado) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        res.render('empleado/ver', { empleado: resultado[0] });
+    });
+});
 
 
 module.exports = router; 
