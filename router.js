@@ -1,27 +1,29 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 
-const conexion = require('./database/db')
+const conexion = require('./database/db');
 
-router.get('/Cliente', (req, res) => {
-    conexion.query("select * from clientes", (error, resultado) => {
+router.get('/Clientes', (req, res) => {
+    conexion.query('SELECT * FROM clientes', (error, results) => {
         if (error) {
             console.log(error);
             return;
         }
+
         else {
-            res.send(resultado);
+            res.send(results);
         }
     });
+
 });
 
-router.get('/cliente2', (req, res) => {
-    conexion.query('select * from clientes', (error, resultado) => {
+router.get('/Cliente2', (req, res) => {
+    conexion.query('SELECT * FROM clientes', (error, results) => {
         if (error) {
             console.log(error);
             return;
-        } else {
-            res.render('clientes/index', {clientes:resultado});
+        }else {
+            res.render('cliente/index', { clientes: results });
         }
     });
 });
@@ -30,15 +32,43 @@ router.get('/crear', (req, res) => {
     res.render('cliente/crear');
 });
 
-const metodo = require('./controller/me');
-router.post('/save',metodo.save);
+const metodos = require('./controller/me');
 
-router.get('/Empleado', (req, res) => {
-    res.send('Este es un mensaje de Empleados');
+
+router.post('/save', metodos.save);
+
+router.get('/editar/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM clientes WHERE codigo = ?', [codigo], (error, resultado) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        res.render('cliente/editar', { cliente: resultado[0] });
+    });
+});
+
+router.post('/edit', metodos.edit);
+
+router.get('/eliminar/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM clientes WHERE codigo = ?', [codigo], (error, resultado) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        res.render('cliente/eliminar', { cliente: resultado[0] });
+    });
+});
+
+router.post('/delete', metodos.delete);
+
+router.get('/Empleados', (req, res) => {
+    res.send('Este es la ruta de Empleados')
 });
 
 router.get('/Empleados2', (req, res) => {
-    res.render('index');
+    res.render('empleado/index')
 });
 
-module.exports = router;
+module.exports = router; 

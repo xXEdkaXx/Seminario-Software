@@ -4,42 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
+    <title>Lista de Clientes</title>
 </head>
 
 <body>
-    <h1>Lista de Clientes</h1>
+    <h1>Gestión de Clientes</h1>
     <a href="/Crear">Crear Clientes</a>
     <table>
         <thead>
             <tr>
-                <td>Código</td>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Edad</td>
-                <td>Ciudad</td>
-                <td>Telefono</td>
-                <td>Editar</td>
-                <td>Ver</td>
-                <td>Eliminar</td>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+                <th>Telefono</th>
+                <th>Editar</th>
+                <th>Ver</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <% clientes.forEach((dato=>{ %>
+            <% clientes.forEach((dato)=>{ %>
                 <tr>
-                    <td><%= dato.codigo %></td>
-                    <td><%= dato.nombre %></td>
-                    <td><%= dato.apellido %></td>
-                    <td><%= dato.edad %></td>
-                    <td><%= dato.ciudad %></td>
-                    <td><%= dato.telefono %></td>
-                    <td><a href="/editar">Editar</a></td>
-                    <td><a href="/ver">Ver</a></td>
-                    <td><a href="/eliminar">Eliminar</a></td>
+                    <td>
+                        <%= dato.codigo %>
+                    </td>
+                    <td>
+                        <%= dato.nombre %>
+                    </td>
+                    <td>
+                        <%= dato.apellido %>
+                    </td>
+                    <td>
+                        <%= dato.edad %>
+                    </td>
+                    <td>
+                        <%= dato.ciudad %>
+                    </td>
+                    <td>
+                        <%= dato.telefono %>
+                    </td>
+                    <td><a href="/editar/<%= dato.codigo %>">Editar</a></td>
+                    <td><a href="/ver/<%= dato.codigo %>">Ver</a></td>
+                    <td><a href="/eliminar/<%= dato.codigo %>">Eliminar</a></td>
                 </tr>
-                <% }))%>
+                <% }) %>
         </tbody>
     </table>
-</body>
 
 </html>
