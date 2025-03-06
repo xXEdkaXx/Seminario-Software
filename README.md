@@ -10,3 +10,9 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
    ```bash
    git clone https://github.com/xXEdkaXx/Seminario-Software.git
    cd Seminario-Software
+   ```
+
+2. **Instala las dependencias necesarias**  
+   ```bash
+   npm install express mysql nodemon ejs
+   
