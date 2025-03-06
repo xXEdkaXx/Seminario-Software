@@ -6,7 +6,6 @@ const conexion = mysql.createConnection({
     port: '3307',
     password: 'root',
     database: 'seminario'
-
 });
 
 conexion.connect((error) => {

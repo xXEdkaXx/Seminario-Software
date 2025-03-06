@@ -15,7 +15,7 @@ router.get('/Cliente', (req, res) => {
     });
 });
 
-router.get('/Cliente2', (req, res) => {
+router.get('/cliente2', (req, res) => {
     conexion.query('select * from clientes', (error, resultado) => {
         if (error) {
             console.log(error);
@@ -27,8 +27,11 @@ router.get('/Cliente2', (req, res) => {
 });
 
 router.get('/crear', (req, res) => {
-    res.render('cliente/crear')
+    res.render('cliente/crear');
 });
+
+const metodo = require('./controller/me');
+router.post('/save',metodo.save);
 
 router.get('/Empleado', (req, res) => {
     res.send('Este es un mensaje de Empleados');
