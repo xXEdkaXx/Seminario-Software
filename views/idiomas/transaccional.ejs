@@ -67,23 +67,38 @@
     }
 </style>
 <body>
-    <h1>Gestión de idiomas</h1>
+    <h1>Gestión de Empleado idiomas</h1>
+    <a href="/CrearI">Agregar idioma a empleado</a>
     <table>
         <thead>
             <tr>
                 <th>Código Idiomas</th>
-                <th>Idiomas</th>
+                <th>Nombre Idiomas</th>
+                <th>Nombre Empleado</th>
+                <th>Tiempo</th>
+                <th>Editar</th>
+                <th>Ver</th>
+                <th>Eliminar</th
             </tr>
         </thead>
         <tbody>
-            <% idiomas.forEach((dato)=>{ %>
+            <% datos.forEach((dato)=>{ %>
                 <tr>
                     <td>
                         <%= dato.codigoI %>
-                    </td>
+                    </td>                    
                     <td>
                         <%= dato.nombreI %>
+                    </td>                    
+                    <td>
+                        <%= dato.nombre %>
+                    </td>            
+                    <td>
+                        <%= dato.tiempoI %> años
                     </td>
+                    <td><a href="/editarEI/<%= dato.codigoEI %>">Editar</a></td>
+                    <td><a href="/verI/<%= dato.codigoEI %>">Ver</a></td>
+                    <td><a href="/eliminarEI/<%= dato.codigoEI %>">Eliminar</a></td>
                 <% }) %>
         </tbody>
     </table>

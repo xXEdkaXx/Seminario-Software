@@ -135,14 +135,29 @@ router.get('/verE/:id', (req, res) => {
 
 //IDIOMAS
 router.get('/Idiomas', (req,res) => {
-    conexion.query('SELECT * FROM empleado_idiomas', (error, results) => {
+    conexion.query('SELECT * FROM idiomas', (error, results) => {
         if (error) {
             console.log(error);
             return;
         } else {
-            res.render('idiomas/index', { empleado_idiomas: results });
+            res.render('idiomas/index', { idiomas: results });
         }
     });
 });
+
+router.get('/empleado_idiomas', (req,res) => {
+    conexion.query('SELECT * FROM vista_empleado_idiomas', (error, results) => {
+        if (error) {
+            console.log(error);
+            return;
+        } else {
+            res.render('idiomas/transaccional', { datos: results });
+        }
+    });
+});
+
+
+
+
 
 module.exports = router; 
