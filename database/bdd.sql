@@ -34,6 +34,8 @@ CREATE TABLE empleado_idiomas (
     FOREIGN KEY (codigoI) REFERENCES idiomas(codigoI) ON DELETE CASCADE
 );
 
+TRUNCATE TABLE clientes
+
 INSERT INTO clientes (nombre, apellido, edad, telefono, ciudad) VALUES
 ('Juan', 'Perez', 22, '90909090', 'La Ceiba'),
 ('Carlos', 'Medina', 30, '80808080', 'San Pedro Sula'),
@@ -67,3 +69,9 @@ INSERT INTO empleado_idiomas (codigoE, codigoI, tiempoI) VALUES
 (4, 5, 2),
 (5, 6, 6),
 (5, 7, 3);
+
+CREATE VIEW vista_empleado_idiomas AS
+SELECT i.codigoI, i.nombreI, e.nombre, ei.tiempoI
+FROM empleado_idiomas ei
+INNER JOIN empleados e ON ei.codigoE = e.codigoE
+INNER JOIN idiomas i ON ei.codigoI = i.codigoI;
