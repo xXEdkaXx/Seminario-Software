@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de idiomas</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: white;
+
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: #333;
+        font-weight: bold;
+    }
+
+
+    .crear-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .crear-link:hover {
+        background-color: #218838;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <h1>Gestión de idiomas</h1>
+    <a href="/CrearI">Crear idiomas</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Código Empleado</th>
+                <th>Código Idiomas</th>
+                <th>Tiempo Idiomas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% empleado_idiomas.forEach((dato)=>{ %>
+                <tr>
+                    <td>
+                        <%= dato.codigoE %>
+                    </td>
+                    <td>
+                        <%= dato.codigoI %>
+                    </td>
+                    <td>
+                        <%= dato.tiempoI %>
+                    </td>
+                <% }) %>
+        </tbody>
+    </table>
+
+</html>

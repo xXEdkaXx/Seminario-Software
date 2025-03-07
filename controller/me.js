@@ -1,6 +1,7 @@
 const express = require('express');
 const conexion = require('../database/db');
 
+// CLIENTES
 exports.save = (req, res) => {
     const nombre = (req.body.nombre);
     const apellido = (req.body.apellido);
@@ -49,6 +50,7 @@ exports.delete = (req, res) => {
     });
 }
 
+//EMPLEADOS
 exports.saveEmpleados = (req, res) => {
     const nombre = (req.body.nombre);
     const apellido = (req.body.apellido);
