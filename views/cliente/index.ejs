@@ -5,6 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Clientes</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e1e1e;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+        th {
+            background-color: #0056b3;
+        }
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+        tr:hover {
+            background-color: #333;
+        }
+        td a {
+            color: #ff4081;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +82,7 @@
                 <th>Apellido</th>
                 <th>Edad</th>
                 <th>Ciudad</th>
-                <th>Telefono</th>
+                <th>Teléfono</th>
                 <th>Editar</th>
                 <th>Ver</th>
                 <th>Eliminar</th>
@@ -27,30 +91,20 @@
         <tbody>
             <% clientes.forEach((dato)=>{ %>
                 <tr>
-                    <td>
-                        <%= dato.codigo %>
-                    </td>
-                    <td>
-                        <%= dato.nombre %>
-                    </td>
-                    <td>
-                        <%= dato.apellido %>
-                    </td>
-                    <td>
-                        <%= dato.edad %>
-                    </td>
-                    <td>
-                        <%= dato.ciudad %>
-                    </td>
-                    <td>
-                        <%= dato.telefono %>
-                    </td>
+                    <td><%= dato.codigo %></td>
+                    <td><%= dato.nombre %></td>
+                    <td><%= dato.apellido %></td>
+                    <td><%= dato.edad %></td>
+                    <td><%= dato.ciudad %></td>
+                    <td><%= dato.telefono %></td>
                     <td><a href="/editar/<%= dato.codigo %>">Editar</a></td>
                     <td><a href="/ver/<%= dato.codigo %>">Ver</a></td>
                     <td><a href="/eliminar/<%= dato.codigo %>">Eliminar</a></td>
                 </tr>
-                <% }) %>
+            <% }) %>
         </tbody>
     </table>
+    <button onclick="window.location.href='/Inicio'">Volver</button>
+</body>
 
 </html>
