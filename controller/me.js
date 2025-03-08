@@ -114,3 +114,19 @@ exports.saveIdiomas = (req, res) => {
         }
     });
 }
+
+exports.editIdiomas = (req, res) =>{
+    const codigoI = (req.body.codigoI);
+    const codigoE = (req.body.codigoE);
+    const nombreI = (req.body.nombreI);
+    const tiempoI  = (req.body.tiempoI);
+
+    conexion.query('UPDATE idiomas SET ? WHERE codigoI = ?', [{ nombreI:nombreI, tiempoI:tiempoI}, codigoI], (error) => {
+        if (error){
+            console.log(error);
+            return;
+        } else {
+            res.redirect('/Empleados2')
+        }
+    });
+}
