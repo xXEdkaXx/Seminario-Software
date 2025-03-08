@@ -4,85 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de idiomas</title>
+    <title>Lista de Idiomas</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e1e1e;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+        th {
+            background-color: #0056b3;
+        }
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+        tr:hover {
+            background-color: #333;
+        }
+        td a {
+            color: #ff4081;
+            font-weight: bold;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #d83670;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    h1 {
-        color: #333;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #007bff;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: white;
-
-    }
-
-    th,
-    td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f8f9fa;
-        color: #333;
-        font-weight: bold;
-    }
-
-
-    .crear-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-
-    .crear-link:hover {
-        background-color: #218838;
-        text-decoration: none;
-    }
-</style>
 
 <body>
-    <h1>Gestión de idiomas</h1>
+    <h1>Gestión de Idiomas</h1>
     <h2>Información del Empleado</h2>
-    <p><strong>Código Empleado:</strong>
-        <%= empleado.codigoE %>
-    </p>
-    <p><strong>Nombre:</strong>
-        <%= empleado.nombre %>
-    </p>
-    <p><strong>Apellido:</strong>
-        <%= empleado.apellido %>
-    </p>
-    <p><strong>Edad:</strong>
-        <%= empleado.edad %>
-    </p>
+    <p><strong>Código Empleado:</strong> <%= empleado.codigoE %></p>
+    <p><strong>Nombre:</strong> <%= empleado.nombre %></p>
+    <p><strong>Apellido:</strong> <%= empleado.apellido %></p>
+    <p><strong>Edad:</strong> <%= empleado.edad %></p>
     <h2>Idiomas del Empleado</h2>
     <table>
         <thead>
@@ -109,8 +105,8 @@
         </tbody>
     </table>
     
-    <button type="submit"><a href="/creari/<%= empleado.codigoE %>">Agregar Idioma</a></button>
-    <button type="submit"><a href="/Empleados2">Volver</a></button>
+    <button><a href="/creari/<%= empleado.codigoE %>">Agregar Idioma</a></button>
+    <button><a href="/Empleados2">Volver</a></button>
 </body>
 
 </html>

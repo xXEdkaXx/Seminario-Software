@@ -5,65 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Idiomas</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            background-color: #1e1e1e;
+            color: white;
+            border: 1px solid #444;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #d83670;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
 
-    h1 {
-        color: #333;
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #007bff;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: white;
-    }
-
-    th, td {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f8f9fa;
-        color: #333;
-        font-weight: bold;
-    }
-
-    .crear-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-
-    .crear-link:hover {
-        background-color: #218838;
-        text-decoration: none;
-    }
-</style>
 <body>
     <h1>Agregar Idioma para el empleado: <%= empleado.nombre %> <%= empleado.apellido %></h1>
     <div class="container">
@@ -79,4 +77,5 @@
         </form>
     </div>
 </body>
+
 </html>

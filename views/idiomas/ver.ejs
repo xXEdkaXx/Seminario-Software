@@ -5,82 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar Idioma hablado</title>
-</head>
-<style>
-    body {
+    <style>
+        body {
+        background-color: #121212;
+        color: #ffffff;
         font-family: Arial, sans-serif;
-        margin: 20px;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    h1 {
-        color: #333;
         text-align: center;
+        margin: 0;
         padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
     }
-
-    a {
-        text-decoration: none;
-        color: #007bff;
+    h1 {
+        color: #007BFF;
     }
-
-    a:hover {
-        text-decoration: underline;
+    form {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        margin: auto;
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: white;
-    }
-
-    th, td {
-        padding: 12px 15px;
+    label, input {
+        display: block;
+        width: 97%;
+        margin-bottom: 10px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
     }
-
-    th {
-        background-color: #f8f9fa;
-        color: #333;
-        font-weight: bold;
-    }
-
-    .crear-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
+    input {
+        padding: 10px;
         border-radius: 5px;
-        margin-bottom: 20px;
+        border: 1px solid #444;
+        background-color: #222;
+        color: #fff;
     }
-
-    .crear-link:hover {
-        background-color: #218838;
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button a {
+        color: white;
         text-decoration: none;
     }
-</style>
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+
 <body>
     <h1>Mostrar Idioma para el empleado: <%= empleado.nombre %> <%= empleado.apellido %></h1>
     <div class="container">
-        <form action="/deleteIdiomas" method="POST">
-            <label for="codigo">Código</label>
-            <input type="text" name="codigoI" id="codigoI" value="<%= idiomas.codigoI %>" readonly>
-            <br><br>
-            <label for="nombreI">Idioma:</label>
-            <input type="text" name="nombreI" class="nombreI" value="<%= idiomas.nombreI %>" readonly>
-            <br><br>
-            <label for="tiempoI">Tiempo Hablando idioma:</label>
-            <input type="text" name="tiempoI" id="tiempoI" value="<%= idiomas.tiempoI %>" readonly>
-            <br><br>
-            <button type="submit"><a href="/Empleados2">volver</a></button>
-        </form>
+        <label for="codigo">Código</label>
+        <input type="text" name="codigoI" id="codigoI" value="<%= idiomas.codigoI %>" readonly>
+        
+        <label for="nombreI">Idioma:</label>
+        <input type="text" name="nombreI" class="nombreI" value="<%= idiomas.nombreI %>" readonly>
+        
+        <label for="tiempoI">Tiempo Hablando idioma:</label>
+        <input type="text" name="tiempoI" id="tiempoI" value="<%= idiomas.tiempoI %>" readonly>
+        
+        <button onclick="window.location.href='/Empleados2'">Volver</button>
     </div>
-
 </body>
 
 </html>
