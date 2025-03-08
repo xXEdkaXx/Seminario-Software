@@ -20,21 +20,13 @@ CREATE TABLE empleados (
     telefono VARCHAR(20) UNIQUE
 );
 
-CREATE TABLE idiomas (
+CREATE TABLE Idiomas (
     codigoI INT PRIMARY KEY AUTO_INCREMENT,
-    nombreI VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE empleado_idiomas (
     codigoE INT,
-    codigoI INT,
-    tiempoI INT DEFAULT 0,
-    PRIMARY KEY (codigoE, codigoI),
-    FOREIGN KEY (codigoE) REFERENCES empleados(codigoE) ON DELETE CASCADE,
-    FOREIGN KEY (codigoI) REFERENCES idiomas(codigoI) ON DELETE CASCADE
+    nombreI VARCHAR(50) NOT NULL,
+    tiempoI VARCHAR(50),
+    FOREIGN KEY (codigoE) REFERENCES empleados(codigoE) ON DELETE CASCADE
 );
-
-TRUNCATE TABLE clientes
 
 INSERT INTO clientes (nombre, apellido, edad, telefono, ciudad) VALUES
 ('Juan', 'Perez', 22, '90909090', 'La Ceiba'),
@@ -49,29 +41,14 @@ INSERT INTO empleados (nombre, apellido, edad, fechaC, sueldo, telefono) VALUES
 ('Ana', 'Martinez', 28, '2023-07-01', 1700.00, '6677889900'),
 ('Luis', 'Hernandez', 40, '2020-11-25', 2200.00, '5566778899');
 
-INSERT INTO idiomas (nombreI) VALUES
-('Inglés'),
-('Chino mandarín'),
-('Español'),
-('Francés'),
-('Japones'),
-('Ruso'),
-('Portugués');
-
-INSERT INTO empleado_idiomas (codigoE, codigoI, tiempoI) VALUES
-(1, 1, 5),
-(1, 3, 4),
-(1, 5, 2),
-(2, 1, 6),
-(2, 4, 3),
-(2, 6, 2),
-(3, 2, 7),
-(4, 5, 2),
-(5, 6, 6),
-(5, 7, 3);
-
-CREATE VIEW vista_empleado_idiomas AS
-SELECT i.codigoI, i.nombreI, e.nombre, ei.tiempoI
-FROM empleado_idiomas ei
-INNER JOIN empleados e ON ei.codigoE = e.codigoE
-INNER JOIN idiomas i ON ei.codigoI = i.codigoI;
+INSERT INTO Idiomas (codigoE, nombreI, tiempoI) VALUES
+(1, 'Inglés', '5 años'),
+(2, 'Español', '3 años'),
+(3, 'Francés', '2 años'),
+(4, 'Alemán', '1 año'),
+(5, 'Italiano', '4 años'),
+(1, 'Chino Mandarín', '6 meses'),
+(2, 'Portugués', '3 años'),
+(3, 'Ruso', '2 años'),
+(4, 'Japonés', '1 año'),
+(5, 'Árabe', '5 años');

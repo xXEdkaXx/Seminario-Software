@@ -99,3 +99,5 @@ exports.deleteEmpleados = (req, res) => {
         }
     });
 }
+
+//IDIOMA_EMPLEADO

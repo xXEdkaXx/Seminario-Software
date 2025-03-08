@@ -39,7 +39,8 @@
 
     }
 
-    th, td {
+    th,
+    td {
         padding: 12px 15px;
         text-align: left;
         border-bottom: 1px solid #ddd;
@@ -66,26 +67,50 @@
         text-decoration: none;
     }
 </style>
+
 <body>
     <h1>Gestión de idiomas</h1>
+    <h2>Información del Empleado</h2>
+    <p><strong>Código Empleado:</strong>
+        <%= empleado.codigoE %>
+    </p>
+    <p><strong>Nombre:</strong>
+        <%= empleado.nombre %>
+    </p>
+    <p><strong>Apellido:</strong>
+        <%= empleado.apellido %>
+    </p>
+    <p><strong>Edad:</strong>
+        <%= empleado.edad %>
+    </p>
+    <h2>Idiomas del Empleado</h2>
     <table>
         <thead>
             <tr>
-                <th>Código Idiomas</th>
-                <th>Idiomas</th>
+                <th>Código</th>
+                <th>Idioma</th>
+                <th>Tiempo</th>
+                <th>Editar</th>
+                <th>Ver</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <% idiomas.forEach((dato)=>{ %>
+            <% idiomas.forEach(function(dato) { %>
                 <tr>
-                    <td>
-                        <%= dato.codigoI %>
-                    </td>
-                    <td>
-                        <%= dato.nombreI %>
-                    </td>
-                <% }) %>
+                    <td><%= dato.codigoI %></td>
+                    <td><%= dato.nombreI %></td>
+                    <td><%= dato.tiempoI %></td>
+                    <td><a href="/editarI/<%= dato.codigoI %>">Editar</a></td>
+                    <td><a href="/verI/<%= dato.codigoI %>">Ver</a></td>
+                    <td><a href="/eliminarI/<%= dato.codigoI %>">Eliminar</a></td>
+                </tr>
+            <% }); %>
         </tbody>
     </table>
+    
+    <button type="submit"><a href="/creari/<%= empleado.codigoE %>">Agregar Idioma</a></button>
+    <button type="submit"><a href="/Empleados2">Volver</a></button>
+</body>
 
 </html>
