@@ -5,6 +5,10 @@ const conexion = require('./database/db');
 const metodos = require('./controller/me');
 const e = require('express');
 
+router.get('/Inicio',(req,res)=>{
+    res.render('index');
+});
+
 //ÁREA CLIENTES
 router.get('/Clientes', (req, res) => {
     conexion.query('SELECT * FROM clientes', (error, results) => {

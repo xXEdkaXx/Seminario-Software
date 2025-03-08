@@ -9,5 +9,5 @@ app.use(express(express.json));
 app.use('/', require('./router'));
 
 app.listen(5000, () => {
-    console.log('Servidor Local http://localhost:5000')
+    console.log('Servidor Local http://localhost:5000/Inicio')
 })
