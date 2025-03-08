@@ -4,7 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eliminar Empleado</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+        label, input {
+            display: block;
+            width: 97%;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input {
+            width: 97%;
+            padding: 8px;
+            margin-top: 5px;
+            background-color: #333;
+            color: #ffffff;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button[type="submit"] {
+            background-color: #ff4081;
+            color: white;
+        }
+        button a {
+            color: black;
+            text-decoration: none;
+        }
+        button[type="submit"]:hover {
+            background-color: #d81b60;
+        }
+        button a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,27 +69,27 @@
     <form action="/deleteEmpleados" method="POST">
         <label for="codigo">Código</label>
         <input type="text" name="codigoE" id="codigoE" value="<%= empleado.codigoE %>" readonly>
-        <br><br>
+
         <label for="Nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" value="<%= empleado.nombre %>" readonly>
-        <br><br>
+
         <label for="Apellido">Apellido</label>
         <input type="text" name="apellido" id="apellido" value="<%= empleado.apellido %>" readonly>
-        <br><br>
+
         <label for="Edad">Edad</label>
         <input type="text" name="edad" id="edad" value="<%= empleado.edad %>" readonly>
-        <br><br>
+
         <label for="Fecha">Fecha</label>
         <input type="date" name="fechaC" id="fechaC" value="<%= empleado.fechaC %>" readonly>
-        <br><br>
+
         <label for="Sueldo">Sueldo</label>
         <input type="number" name="sueldo" id="sueldo" value="<%= empleado.sueldo %>" readonly>
-        <br><br>
+
         <label for="Teléfono">Teléfono</label>
         <input type="text" name="telefono" id="telefono" value="<%= empleado.telefono %>" readonly>
-        <br><br>
+
         <button type="submit">Eliminar</button>
-        <button type="submit"><a href="/Empleados2">Cancelar</a></button>
+        <button><a href="/Empleados2">Cancelar</a></button>
     </form>
 </body>
 

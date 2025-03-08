@@ -5,31 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Empleados</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+        label, input {
+            display: block;
+            width: 97%;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #222;
+            color: #fff;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Crear Empleado</h1>
     <form action="/saveEmpleados" method="post">
-
-        <label for="Nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre">
-        <br><br>
-        <label for="Apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido">
-        <br><br>
-        <label for="Edad">Edad</label>
-        <input type="text" name="edad" id="edad">
-        <br><br>
-        <label for="Fecha">Fecha</label>
-        <input type="date" name="fechaC" id="fechaC">
-        <br><br>
-        <label for="Sueldo">Sueldo</label>
-        <input type="number" name="sueldo" id="sueldo">
-        <br><br>
-        <label for="Teléfono">Teléfono</label>
-        <input type="text" name="telefono" id="telefono">
-        <br><br>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required>
+        
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" required>
+        
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" required>
+        
+        <label for="fechaC">Fecha</label>
+        <input type="date" name="fechaC" id="fechaC" required>
+        
+        <label for="sueldo">Sueldo</label>
+        <input type="number" name="sueldo" id="sueldo" required>
+        
+        <label for="telefono">Teléfono</label>
+        <input type="text" name="telefono" id="telefono" required>
+        
         <button type="submit">Crear Empleado</button>
-        <button type="submit"><a href="/Empleados2">Cancelar</a></button>
+        <button><a href="/Empleados2">Cancelar</a></button>
     </form>
 </body>
 
