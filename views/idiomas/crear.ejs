@@ -68,6 +68,7 @@
     <h1>Agregar Idioma para el empleado: <%= empleado.nombre %> <%= empleado.apellido %></h1>
     <div class="container">
         <form action="/saveIdiomas" method="POST">
+            <input type="hidden" name="codigoE" value="<%= empleado.codigoE %>">
             <label for="nombreI">Idioma:</label>
             <input type="text" name="nombreI" class="nombreI" required>
             <br><br>
