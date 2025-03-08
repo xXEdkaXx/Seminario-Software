@@ -130,3 +130,16 @@ exports.editIdiomas = (req, res) =>{
         }
     });
 }
+
+exports.deleteIdiomas = (req, res) => {
+    const codigoI  = (req.body.codigoI);
+
+    conexion.query('DELETE FROM idiomas WHERE codigoI = ?', [codigoI], (error) => {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            res.redirect('/Empleados2');
+        }
+    });
+}

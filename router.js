@@ -191,4 +191,25 @@ router.get('/EditarI/:id', (req, res) => {
     });
 });
 
+router.post('/deleteIdiomas', metodos.deleteIdiomas);
+
+router.get('/eliminarI/:id', (req, res) => {
+    const codigo = req.params.id;
+    conexion.query('SELECT * FROM idiomas WHERE codigoI = ?', [codigo], (error, resultadoI) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        conexion.query('SELECT * FROM empleados WHERE codigoE = ?', [resultadoI[0].codigoE], (error, resultadoE) => {
+            if (error) {
+                console.log(error);
+                return;
+            }
+
+            res.render('idiomas/eliminar', { idiomas: resultadoI[0], empleado: resultadoE[0] });
+        });
+    });
+});
+
+
 module.exports = router; 
