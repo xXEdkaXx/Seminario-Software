@@ -211,5 +211,21 @@ router.get('/eliminarI/:id', (req, res) => {
     });
 });
 
+router.get('/VerI/:id', (req, res) => {
+    const codigo = req.params.id;  
+    conexion.query('SELECT * FROM idiomas WHERE codigoI = ?', [codigo], (error, resultadoI) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        conexion.query('SELECT * FROM empleados WHERE codigoE = ?', [resultadoI[0].codigoE], (error, resultadoE) => {
+            if (error) {
+                console.log(error);
+                return;
+            }
 
+            res.render('idiomas/ver', { idiomas: resultadoI[0], empleado: resultadoE[0] });
+        });
+    });
+});
 module.exports = router; 

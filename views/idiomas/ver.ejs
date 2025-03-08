@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Idioma hablado</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: white;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .crear-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .crear-link:hover {
+        background-color: #218838;
+        text-decoration: none;
+    }
+</style>
+<body>
+    <h1>Mostrar Idioma para el empleado: <%= empleado.nombre %> <%= empleado.apellido %></h1>
+    <div class="container">
+        <form action="/deleteIdiomas" method="POST">
+            <label for="codigo">Código</label>
+            <input type="text" name="codigoI" id="codigoI" value="<%= idiomas.codigoI %>" readonly>
+            <br><br>
+            <label for="nombreI">Idioma:</label>
+            <input type="text" name="nombreI" class="nombreI" value="<%= idiomas.nombreI %>" readonly>
+            <br><br>
+            <label for="tiempoI">Tiempo Hablando idioma:</label>
+            <input type="text" name="tiempoI" id="tiempoI" value="<%= idiomas.tiempoI %>" readonly>
+            <br><br>
+            <button type="submit"><a href="/Empleados2">volver</a></button>
+        </form>
+    </div>
+
+</body>
+
+</html>
