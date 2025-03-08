@@ -101,3 +101,16 @@ exports.deleteEmpleados = (req, res) => {
 }
 
 //IDIOMA_EMPLEADO
+exports.saveIdiomas = (req, res) => {
+    const codigoE = (req.body.codigoE);
+    const nombreI = (req.body.nombreI);
+    const tiempoI  = (req.body.tiempoI);
+
+    conexion.query('INSERT INTO idiomas  SET ?', { codigoE:codigoE, nombreI:nombreI, tiempoI:tiempoI}, (error) => {
+        if (error) {
+            console.log(error);
+        } else {
+            res.redirect('/Empleados2')
+        }
+    });
+}

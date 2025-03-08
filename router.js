@@ -152,4 +152,23 @@ router.get('/idioma/:id', (req,res) => {
     });
 });
 
+router.post('/saveIdiomas', metodos.saveIdiomas);
+
+router.get('/crearI/:id', (req, res) => {
+    const codigo = req.params.id; 
+    conexion.query('SELECT * FROM empleados WHERE codigoE = ?', [codigo], (error, resultadoE) => {
+        if (error) {
+            console.log(error); 
+            return;
+        }
+        conexion.query('SELECT * FROM idiomas', (error, resultadoI) => {
+            if (error) {
+                console.log(error); 
+                return;
+            }
+            res.render('idiomas/crear', {empleado: resultadoE[0], idiomas: resultadoI});
+        });
+    });
+});
+
 module.exports = router; 
